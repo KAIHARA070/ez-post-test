@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Download EZPos-System - A modern Point of Sale management system">
+    <title>EZPos-System - Download POS Installer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">EZPos-System</div>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#download">Download</a></li>
+                <li><a href="#support">Support</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>EZPos-System</h1>
+                <p class="subtitle">Professional Point of Sale Management System</p>
+                <p class="description">Streamline your retail operations with our intuitive and powerful POS solution.</p>
+                <button class="btn btn-primary" onclick="scrollToDownload()">Download Now</button>
+            </div>
+            <div class="hero-image">
+                <div class="icon-placeholder">
+                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="10" y="15" width="80" height="60" rx="5" fill="none" stroke="currentColor" stroke-width="2"/>
+                        <rect x="15" y="20" width="70" height="35" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                        <line x1="20" y1="60" x2="35" y2="60" stroke="currentColor" stroke-width="2"/>
+                        <line x1="40" y1="60" x2="60" y2="60" stroke="currentColor" stroke-width="2"/>
+                        <line x1="65" y1="60" x2="80" y2="60" stroke="currentColor" stroke-width="2"/>
+                        <circle cx="50" cy="80" r="4" fill="currentColor"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2>Key Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">💳</div>
+                    <h3>Easy Transactions</h3>
+                    <p>Fast and secure payment processing with support for multiple payment methods.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Real-time Reports</h3>
+                    <p>Get detailed analytics and sales reports instantly at your fingertips.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📦</div>
+                    <h3>Inventory Management</h3>
+                    <p>Efficiently track and manage your stock levels in real-time.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3>Customer Management</h3>
+                    <p>Build customer profiles and loyalty programs to boost retention.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Secure & Reliable</h3>
+                    <p>Enterprise-grade security with automatic backups and data protection.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚙️</div>
+                    <h3>Customizable</h3>
+                    <p>Tailor the system to match your business specific requirements.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hardware Support Section -->
+    <section class="hardware">
+        <div class="container">
+            <h2>Hardware & Connectivity</h2>
+            <div class="hardware-grid">
+                <div class="hardware-card">
+                    <div class="hardware-icon">📱</div>
+                    <h3>Barcode Scanner</h3>
+                    <p>Full support for USB and wireless barcode scanners for fast product entry and inventory tracking.</p>
+                </div>
+                <div class="hardware-card">
+                    <div class="hardware-icon">🖨️</div>
+                    <h3>Thermal Printer</h3>
+                    <p>Seamless integration with thermal printers for receipts and labels with excellent print quality.</p>
+                </div>
+                <div class="hardware-card">
+                    <div class="hardware-icon">📡</div>
+                    <h3>Offline Mode</h3>
+                    <p>Works completely offline - all transactions are synced automatically when connection is restored.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- System Requirements Section -->
+    <section class="requirements">
+        <div class="container">
+            <h2>System Requirements</h2>
+            <div class="requirements-grid">
+                <div class="req-item">
+                    <h4>Operating System</h4>
+                    <p>Windows 7 or later</p>
+                </div>
+                <div class="req-item">
+                    <h4>Processor</h4>
+                    <p>Intel Core i3 or equivalent, 2.0 GHz or faster</p>
+                </div>
+                <div class="req-item">
+                    <h4>Memory</h4>
+                    <p>4 GB RAM minimum, 8 GB recommended</p>
+                </div>
+                <div class="req-item">
+                    <h4>Storage</h4>
+                    <p>2 GB available disk space for installation</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section class="download" id="download">
+        <div class="container">
+            <h2>Download EZPos-System</h2>
+            <p class="download-subtitle">Choose your platform and download the latest version</p>
+            
+            <div class="download-cards">
+                <div class="download-card">
+                    <div class="download-icon">🪟</div>
+                    <h3>Windows Installer</h3>
+                    <p class="version" id="versionDisplay">Version Loading...</p>
+                    <p class="size" id="sizeDisplay">File size: Fetching...</p>
+                    <p class="release-date" id="dateDisplay">Released: Loading...</p>
+                    <button class="btn btn-download" onclick="downloadInstaller()" id="downloadBtn" disabled>
+                        <span class="download-text">Fetching Download Link...</span>
+                        <span class="download-icon-btn">⬇</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="release-notes">
+                <h3>Latest Release Notes</h3>
+                <ul>
+                    <li>✨ Improved user interface with modern design</li>
+                    <li>🚀 Enhanced performance and faster load times</li>
+                    <li>🔧 Bug fixes and stability improvements</li>
+                    <li>📱 Better mobile responsiveness</li>
+                    <li>🔐 Security updates and patches</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Support Section -->
+    <section class="support" id="support">
+        <div class="container">
+            <h2>Need Help?</h2>
+            <div class="support-grid">
+                <div class="support-card">
+                    <h3>📖 Documentation</h3>
+                    <p>Read our comprehensive guides and tutorials to get started quickly.</p>
+                    <a href="#" class="link">View Docs →</a>
+                </div>
+                <div class="support-card">
+                    <h3>❓ FAQ</h3>
+                    <p>Find answers to common questions about installation and usage.</p>
+                    <a href="#" class="link">View FAQ →</a>
+                </div>
+                <div class="support-card">
+                    <h3>📧 Contact Support</h3>
+                    <p>Get in touch with our support team for personalized assistance.</p>
+                    <a href="mailto:support@ezpos-system.com" class="link">Send Email →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>EZPos-System</h4>
+                    <p>Your complete POS solution for modern retail.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#download">Download</a></li>
+                        <li><a href="#support">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">License</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 EZPos-System. All rights reserved. | <a href="#">Privacy</a> | <a href="#">Terms</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Download Modal -->
+    <div id="downloadModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal()">&times;</button>
+            <h3>Download Started</h3>
+            <p id="platformMessage"></p>
+            <p class="modal-note">Your download has started. If it doesn't begin, <a href="#" id="fallbackLink">click here</a>.</p>
+            <button class="btn btn-primary" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
