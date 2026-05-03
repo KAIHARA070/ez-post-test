@@ -8,6 +8,23 @@ This guide explains how to run and extend the EZPos Blazor UI foundation powered
 - Design Components: Microsoft.FluentUI.AspNetCore.Components.
 - API Integration: HttpClient to EZPos license API.
 
+## Tech Stack Summary
+
+Live in this phase:
+
+- C# with .NET 10
+- Blazor Web App (Server interactivity)
+- Fluent UI Blazor components
+- Custom CSS token/surface system
+- Small JS helper for theme persistence
+
+Backend foundation (next phase):
+
+- ASP.NET Core Web API (layered projects)
+- EF Core + PostgreSQL provider
+- Stripe .NET SDK for payment flow
+- Render deployment with Docker fallback
+
 Why this choice:
 - Fast first paint and simple hosting.
 - Native-like UI controls aligned with Fluent/WinUI.

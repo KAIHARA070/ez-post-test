@@ -2,6 +2,18 @@
 
 EZPos is now based on a C# Blazor web frontend with a layered .NET backend foundation.
 
+## Tech Stack At A Glance
+
+- Language: C# (.NET 10)
+- Frontend: Blazor Web App (Server interactivity)
+- UI Components: Microsoft Fluent UI for Blazor
+- Styling: Custom CSS design tokens + Fluent surface styles
+- Client Script: Minimal JavaScript (theme/localStorage)
+- Backend Foundation: ASP.NET Core Web API (layered: Api/App/Infra/Domain)
+- Data Layer (planned foundation): EF Core + PostgreSQL provider
+- Payments (planned foundation): Stripe .NET SDK
+- Deployment: Render (Docker fallback supported)
+
 ## Current Frontend
 
 The customer-facing website runs from:

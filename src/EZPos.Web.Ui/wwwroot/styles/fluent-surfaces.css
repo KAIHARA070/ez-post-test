@@ -7,22 +7,52 @@ body {
     margin: 0;
     padding: 0;
     min-height: 100%;
-    font-family: "Segoe UI Variable", "Segoe UI", sans-serif;
+    font-family: "Inter", "Segoe UI", sans-serif;
     color: var(--text-primary);
     background:
-        radial-gradient(circle at 10% 0%, rgba(59, 130, 246, 0.2), transparent 34%),
-        radial-gradient(circle at 90% 20%, rgba(20, 184, 166, 0.18), transparent 28%),
-        var(--bg);
+        radial-gradient(circle at 100% -10%, rgba(59, 130, 246, 0.12), transparent 36%),
+        radial-gradient(circle at -10% 15%, rgba(59, 130, 246, 0.08), transparent 34%),
+        var(--bg-primary);
+    line-height: 1.55;
 }
 
 a {
+    color: inherit;
     text-decoration: none;
 }
 
+h1,
+h2,
+h3 {
+    margin: 0;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    font-weight: 700;
+}
+
+h2 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 650;
+}
+
+h3 {
+    font-size: 1.125rem;
+    font-weight: 620;
+}
+
+p {
+    margin: 0;
+    color: var(--text-secondary);
+}
+
 .app-shell {
-    max-width: 1240px;
+    max-width: 1100px;
     margin: 0 auto;
-    padding: 18px 20px 30px;
+    padding: var(--space-3) var(--space-2) var(--space-5);
 }
 
 .top-shell {
@@ -35,89 +65,201 @@ a {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 16px;
+    gap: var(--space-2);
+    padding: 0.875rem 1rem;
     border: 1px solid var(--border);
-    background: var(--surface);
-    backdrop-filter: blur(16px);
     border-radius: var(--radius-lg);
+    background: color-mix(in srgb, var(--surface-primary) 90%, transparent);
     box-shadow: var(--shadow-soft);
-    padding: 12px 16px;
+    backdrop-filter: blur(14px);
 }
 
 .brand-zone {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 0.625rem;
+}
+
+.brand-zone strong {
+    font-weight: 650;
 }
 
 .brand-mark {
-    width: 30px;
-    height: 30px;
-    border-radius: 8px;
-    background: linear-gradient(135deg, var(--accent-blue), var(--accent-teal));
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 0.5rem;
+    background: linear-gradient(145deg, var(--accent), var(--accent-strong));
 }
 
 .brand-subtitle {
-    color: var(--text-secondary);
-    font-size: 0.78rem;
+    color: var(--text-muted);
+    font-size: 0.75rem;
 }
 
 .nav-links {
     display: flex;
-    gap: 10px;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .nav-link {
     color: var(--text-secondary);
-    padding: 8px 12px;
-    border-radius: 10px;
-    transition: 0.16s ease;
+    border-radius: var(--radius-sm);
+    padding: 0.5rem 0.75rem;
+    font-size: 0.9rem;
+    font-weight: 520;
+    transition: background-color 140ms ease, color 140ms ease;
 }
 
-.nav-link.active,
-.nav-link:hover {
+.nav-link:hover,
+.nav-link.active {
     color: var(--text-primary);
-    background: rgba(59, 130, 246, 0.14);
+    background: color-mix(in srgb, var(--accent) 18%, transparent);
+}
+
+.nav-link:focus-visible {
+    outline: none;
+    box-shadow: var(--focus-ring);
 }
 
 .nav-actions {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 0.625rem;
+}
+
+.theme-toggle {
+    font-size: 0.85rem;
 }
 
 .shell-content {
-    margin-top: 20px;
+    margin-top: var(--space-3);
 }
 
 .shell-footer {
-    margin-top: 28px;
+    margin-top: var(--space-4);
 }
 
 .footer-inner {
     display: flex;
     justify-content: space-between;
-    gap: 20px;
+    gap: var(--space-2);
+    padding: 0.875rem 1rem;
+    color: var(--text-muted);
     border: 1px solid var(--border);
     border-radius: var(--radius-md);
-    background: var(--surface);
-    padding: 14px 18px;
-    color: var(--text-secondary);
+    background: var(--surface-secondary);
 }
 
 .feature-card,
 .pricing-card,
 .hero-visual,
 .cta-strip,
-.page-header {
+.page-header,
+.error-panel {
     border: 1px solid var(--border);
-    background: var(--surface);
-    backdrop-filter: blur(12px);
     border-radius: var(--radius-lg);
+    background: var(--surface-primary);
     box-shadow: var(--shadow-card);
 }
 
-@media (max-width: 900px) {
+.status-success {
+    color: var(--success);
+}
+
+.status-warning {
+    color: var(--warning);
+}
+
+.status-error {
+    color: var(--error);
+}
+
+/* Fluent component standardization */
+fluent-button::part(control) {
+    border-radius: 0.6rem;
+    min-height: 2.5rem;
+    transition: transform 120ms ease, filter 120ms ease;
+}
+
+fluent-button:hover::part(control) {
+    filter: brightness(0.98);
+    transform: translateY(-1px);
+}
+
+fluent-button:focus-visible::part(control) {
+    outline: none;
+    box-shadow: var(--focus-ring);
+}
+
+.btn-secondary::part(control) {
+    background: color-mix(in srgb, var(--surface-secondary) 90%, var(--bg-secondary));
+    border-color: var(--border);
+    color: var(--text-primary);
+}
+
+.btn-ghost::part(control) {
+    background: transparent;
+    border-color: transparent;
+    color: var(--text-secondary);
+}
+
+.btn-ghost:hover::part(control) {
+    background: color-mix(in srgb, var(--accent) 12%, transparent);
+    color: var(--text-primary);
+}
+
+fluent-text-field::part(control),
+fluent-text-area::part(control),
+fluent-select::part(control) {
+    border-radius: 0.6rem;
+    border-color: var(--border);
+    background: var(--surface-secondary);
+    color: var(--text-primary);
+}
+
+fluent-text-field:focus-within::part(control),
+fluent-text-area:focus-within::part(control),
+fluent-select:focus-within::part(control) {
+    box-shadow: var(--focus-ring);
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    background: var(--surface-primary);
+}
+
+.data-table th,
+.data-table td {
+    text-align: left;
+    padding: 0.75rem 0.875rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.data-table th {
+    background: var(--surface-secondary);
+    color: var(--text-secondary);
+    font-size: 0.82rem;
+    font-weight: 620;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+}
+
+.data-table tr:last-child td {
+    border-bottom: 0;
+}
+
+.data-table td {
+    color: var(--text-primary);
+    font-size: 0.92rem;
+}
+
+@media (max-width: 920px) {
     .main-nav {
         flex-wrap: wrap;
     }

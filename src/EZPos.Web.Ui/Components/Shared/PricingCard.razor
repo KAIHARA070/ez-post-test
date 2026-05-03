@@ -19,7 +19,9 @@
         }
     </ul>
 
-    <FluentButton Appearance="Appearance.Accent" Href="@ActionHref" Class="pricing-action">
+    <FluentButton Appearance="@(IsFeatured ? Appearance.Accent : Appearance.Neutral)"
+                  Href="@ActionHref"
+                  Class="@($"pricing-action {(IsFeatured ? "btn-primary" : "btn-secondary")}")">
         @ActionText
     </FluentButton>
 </FluentCard>
