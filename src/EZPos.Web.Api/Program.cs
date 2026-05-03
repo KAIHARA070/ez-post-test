@@ -1,34 +1,57 @@
+using Microsoft.EntityFrameworkCore;
+using EZPos.Web.Infra.Data;
+using EZPos.Web.Api.Services;
+using Stripe;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// ===== Configuration =====
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+StripeConfiguration.ApiKey = builder.Configuration["Stripe:SecretKey"];
 
-var app = builder.Build();
+// ===== Add Services =====
 
-// Configure the HTTP request pipeline.
+// Database Context
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseNpgsql(connectionString, x =>
+    {
+        x.MigrationsHistoryTable("__EFMigrationsHistory");
+    }));
 
-app.UseHttpsRedirection();
+// Application Services
+builder.Services.AddScoped<ILicenseApiService, LicenseApiService>();
+builder.Services.AddScoped<IStripeService, StripeService>();
 
-var summaries = new[]
+// Razor Pages
+builder.Services.AddRazorPages();
+
+// Logging
+builder.Services.AddLogging(config =>
 {
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
-
-app.MapGet("/weatherforecast", () =>
-{
-    var forecast =  Enumerable.Range(1, 5).Select(index =>
-        new WeatherForecast
-        (
-            DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-            Random.Shared.Next(-20, 55),
-            summaries[Random.Shared.Next(summaries.Length)]
-        ))
-        .ToArray();
-    return forecast;
+    config.AddConsole();
+    config.AddDebug();
 });
 
-app.Run();
+// ===== Build App =====
+var app = builder.Build();
 
-record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
+// ===== Configure HTTP Pipeline =====
+
+if (!app.Environment.IsDevelopment())
 {
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
+    app.UseExceptionHandler("/Error");
+    app.UseHsts();
 }
+
+app.UseHttpsRedirection();
+app.UseStaticFiles();
+app.UseRouting();
+
+// ===== Map Endpoints =====
+app.MapRazorPages();
+
+// Health check endpoint
+app.MapGet("/health", () => Results.Ok(new { status = "healthy", timestamp = DateTime.UtcNow }))
+    .WithName("Health");
+
+app.Run();
