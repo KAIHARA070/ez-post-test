@@ -25,7 +25,13 @@ using (var scope = app.Services.CreateScope())
 }
 
 // 4. Konfigurasi Kunci Keselamatan Stripe
-StripeConfiguration.ApiKey = builder.Configuration.GetSection("Stripe")["SecretKey"];
+var stripeSecretKey = builder.Configuration.GetSection("Stripe")["SecretKey"];
+if (string.IsNullOrEmpty(stripeSecretKey) || stripeSecretKey.StartsWith("pk_"))
+{
+    // Jika kunci bermula dengan pk_, bermakna tersalah letak Publishable Key
+    Console.WriteLine("ERROR: Stripe SecretKey is missing or invalid (Starts with pk_). Check Environment Variables.");
+}
+StripeConfiguration.ApiKey = stripeSecretKey;
 
 if (!app.Environment.IsDevelopment())
 {
