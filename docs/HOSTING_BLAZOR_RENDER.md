@@ -111,6 +111,27 @@ If you want both frontend and backend running on Render, use two web services.
 - Root Directory: src/EZPos.Web.Api
 - Purpose: API endpoints, payments, license logic
 
+If Runtime .NET is available:
+
+- Build Command: dotnet restore; dotnet publish -c Release -o out
+- Start Command: dotnet out/EZPos.Web.Api.dll
+
+If Runtime .NET is NOT available:
+
+- Runtime: Docker
+- Dockerfile Path: Dockerfile
+- Build Command: leave empty
+- Start Command: leave empty
+
+Backend Docker files included in repo:
+
+- src/EZPos.Web.Api/Dockerfile
+- src/EZPos.Web.Api/.dockerignore
+
+Suggested API health check path:
+
+- /health
+
 ### Connect Them
 
 1. Deploy backend service first and copy its public URL.
