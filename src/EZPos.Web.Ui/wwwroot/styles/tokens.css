@@ -1,6 +1,8 @@
 :root {
     color-scheme: dark;
 
+    --font-sans: "Manrope", "Segoe UI", sans-serif;
+
     /* Spacing system (8px grid) */
     --space-1: 0.5rem;
     --space-2: 1rem;
@@ -13,46 +15,52 @@
     --radius-sm: 0.5rem;
     --radius-md: 0.75rem;
     --radius-lg: 1rem;
-    --shadow-soft: 0 1px 2px rgba(3, 7, 18, 0.35), 0 10px 32px rgba(3, 7, 18, 0.28);
-    --shadow-card: 0 1px 2px rgba(3, 7, 18, 0.35), 0 16px 40px rgba(3, 7, 18, 0.3);
+    --shadow-soft: 0 1px 2px rgba(2, 6, 23, 0.3), 0 12px 28px rgba(2, 6, 23, 0.26);
+    --shadow-card: 0 1px 2px rgba(2, 6, 23, 0.36), 0 18px 42px rgba(2, 6, 23, 0.34);
 
     /* Semantic colors */
-    --bg-primary: #111827;
-    --bg-secondary: #0f172a;
-    --surface-primary: #1f2937;
-    --surface-secondary: #273346;
+    --bg-primary: #0f172a;
+    --bg-secondary: #111c32;
+    --surface-primary: #17243b;
+    --surface-secondary: #1d2c46;
 
-    --text-primary: #f3f4f6;
-    --text-secondary: #d1d5db;
-    --text-muted: #9ca3af;
+    --text-primary: #eff6ff;
+    --text-secondary: #d2ddec;
+    --text-muted: #8fa2bd;
 
-    --accent: #3b82f6;
-    --accent-strong: #2563eb;
-    --border: #374151;
+    --accent: #2563eb;
+    --accent-strong: #1d4ed8;
+    --border: #2f3f5c;
 
     --success: #22c55e;
     --warning: #f59e0b;
     --error: #ef4444;
 
-    --focus-ring: 0 0 0 3px rgba(59, 130, 246, 0.35);
+    --focus-ring: 0 0 0 3px rgba(37, 99, 235, 0.34);
+
+    /* Motion tokens */
+    --motion-fast: 120ms;
+    --motion-base: 160ms;
+    --motion-ease-standard: cubic-bezier(0.2, 0, 0.12, 1);
+    --motion-ease-emphasized: cubic-bezier(0.2, 0, 0, 1);
 }
 
 :root[data-theme="light"] {
     color-scheme: light;
 
-    --bg-primary: #f8fafc;
-    --bg-secondary: #f1f5f9;
+    --bg-primary: #f5f7fb;
+    --bg-secondary: #eef2f8;
     --surface-primary: #ffffff;
-    --surface-secondary: #f8fafc;
+    --surface-secondary: #f7f9fd;
 
-    --text-primary: #0f172a;
-    --text-secondary: #334155;
-    --text-muted: #64748b;
+    --text-primary: #111827;
+    --text-secondary: #374151;
+    --text-muted: #6b7280;
 
     --accent: #2563eb;
     --accent-strong: #1d4ed8;
-    --border: #dbe3ee;
+    --border: #d6deea;
 
-    --shadow-soft: 0 1px 2px rgba(15, 23, 42, 0.08), 0 8px 24px rgba(15, 23, 42, 0.08);
-    --shadow-card: 0 1px 2px rgba(15, 23, 42, 0.08), 0 12px 30px rgba(15, 23, 42, 0.1);
+    --shadow-soft: 0 1px 2px rgba(15, 23, 42, 0.08), 0 10px 24px rgba(15, 23, 42, 0.08);
+    --shadow-card: 0 1px 2px rgba(15, 23, 42, 0.1), 0 14px 36px rgba(15, 23, 42, 0.1);
 }
