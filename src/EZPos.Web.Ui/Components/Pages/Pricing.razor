@@ -1,0 +1,52 @@
+@page "/pricing"
+
+<PageTitle>EZPos Pricing</PageTitle>
+
+<section class="page-header">
+    <p class="eyebrow">Pricing</p>
+    <h1>Simple, transparent plans</h1>
+    <p>Designed for one-time purchases now, structured for subscription tiers later.</p>
+</section>
+
+<section class="pricing-row">
+    <PricingCard
+        PlanName="Professional License"
+        PlanDescription="Ideal for most stores"
+        Price="$199"
+        Period="one-time"
+        IsFeatured="true"
+        Features="@ProFeatures"
+        ActionText="Buy License"
+        ActionHref="#" />
+
+    <PricingCard
+        PlanName="Growth Pack"
+        PlanDescription="Planned expansion tier"
+        Price="Coming Soon"
+        Period="future"
+        Features="@GrowthFeatures"
+        ActionText="Notify Me"
+        ActionHref="#" />
+</section>
+
+<section class="cta-strip compact">
+    <h2>Need custom rollout support?</h2>
+    <p>Talk to us for branch-based deployment and license operations planning.</p>
+    <FluentButton Appearance="Appearance.Neutral" Href="/">Back to Home</FluentButton>
+</section>
+
+@code {
+    private static readonly List<string> ProFeatures =
+    [
+        "Production-ready license flow",
+        "Validation API integration",
+        "Modern customer-facing UX"
+    ];
+
+    private static readonly List<string> GrowthFeatures =
+    [
+        "Multi-location support",
+        "Admin controls",
+        "Customer portal integration"
+    ];
+}

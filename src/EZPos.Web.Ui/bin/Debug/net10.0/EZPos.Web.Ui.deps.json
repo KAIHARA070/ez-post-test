@@ -1,0 +1,41 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "EZPos.Web.Ui/1.0.0": {
+        "dependencies": {
+          "Microsoft.FluentUI.AspNetCore.Components": "4.14.1"
+        },
+        "runtime": {
+          "EZPos.Web.Ui.dll": {}
+        }
+      },
+      "Microsoft.FluentUI.AspNetCore.Components/4.14.1": {
+        "runtime": {
+          "lib/net10.0/Microsoft.FluentUI.AspNetCore.Components.dll": {
+            "assemblyVersion": "4.14.1.26112",
+            "fileVersion": "4.14.1.26112"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "EZPos.Web.Ui/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.FluentUI.AspNetCore.Components/4.14.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-dfP20+kxwiI8Ppgp1SDwfsv/QImi5CPqq9oRzP0YdvJ8b+Gtgtrrcm87+2P5hxEEyRsTn3y4Hy+lafOhy+JdAQ==",
+      "path": "microsoft.fluentui.aspnetcore.components/4.14.1",
+      "hashPath": "microsoft.fluentui.aspnetcore.components.4.14.1.nupkg.sha512"
+    }
+  }
+}

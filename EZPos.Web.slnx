@@ -4,5 +4,6 @@
     <Project Path="src/EZPos.Web.App/EZPos.Web.App.csproj" />
     <Project Path="src/EZPos.Web.Domain/EZPos.Web.Domain.csproj" />
     <Project Path="src/EZPos.Web.Infra/EZPos.Web.Infra.csproj" />
+    <Project Path="src/EZPos.Web.Ui/EZPos.Web.Ui.csproj" />
   </Folder>
 </Solution>

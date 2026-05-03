@@ -1,0 +1,27 @@
+html, body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+a, .btn-link {
+    color: #006bb7;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #1b6ec2;
+    #blazor-error-ui {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        display: none;
+        z-index: 1200;
+        padding: 0.8rem 1rem;
+        background: #7a1b1b;
+        color: #fff;
+    }
+
+    #blazor-error-ui .dismiss {
+        cursor: pointer;
+        float: right;
+    }
