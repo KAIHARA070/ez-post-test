@@ -1,9 +1,8 @@
-bin/
-obj/
+**/bin/
+**/obj/
 .vs/
 .vscode/
 *.user
 *.suo
 *.tmp
 *.log
-appsettings.Development.json

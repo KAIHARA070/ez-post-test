@@ -119,18 +119,24 @@ If Runtime .NET is available:
 If Runtime .NET is NOT available:
 
 - Runtime: Docker
-- Dockerfile Path: Dockerfile
+- Root Directory: src
+- Dockerfile Path: EZPos.Web.Api/Dockerfile
 - Build Command: leave empty
 - Start Command: leave empty
 
 Backend Docker files included in repo:
 
 - src/EZPos.Web.Api/Dockerfile
-- src/EZPos.Web.Api/.dockerignore
+- src/.dockerignore
 
 Suggested API health check path:
 
 - /health
+
+Important for Docker mode on backend:
+
+- Use Root Directory `src` (not `src/EZPos.Web.Api`) because API has project references to `EZPos.Web.App`, `EZPos.Web.Infra`, and `EZPos.Web.Domain`.
+- If Root Directory is set to `src/EZPos.Web.Api`, Render cannot see sibling projects and build fails with errors like "referenced project ... was not found".
 
 ### Connect Them
 
